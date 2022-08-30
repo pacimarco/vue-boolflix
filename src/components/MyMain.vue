@@ -15,14 +15,12 @@
     import axios from 'axios';
 export default {
 name:'MyMain',
-
-
-data(){
-    return{
-        query: "",
-        
-    }
+props:{
+    query: Object,
 },
+
+
+
 
 methods: {
         search() {

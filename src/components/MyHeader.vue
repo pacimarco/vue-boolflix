@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="query">
-            <button @click="search">Search</button>
+            <button @click="search">Search</button> <!--emit in app?-->
   </div>
 </template>
 
