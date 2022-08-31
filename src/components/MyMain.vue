@@ -1,6 +1,7 @@
 <template>
   <main>
     <ul>
+        
         <li>info film</li>
         <li v-for="(film,index) in filmList" :key="index">
             {{film.title}} ---
