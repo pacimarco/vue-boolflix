@@ -1,12 +1,15 @@
 <template>
   <main>
     <ul>
+        <li>info film</li>
         <li v-for="(film,index) in filmList" :key="index">
-            {{film.title}} 
+            {{film.title}} ---
             {{film.original_title}} ---
-            {{film.original_language}} --- 
+            {{film.original_language}} ---
             {{film.vote_average}}
-        </li>          
+
+        </li>
+                 
     </ul>
   </main>
 </template>
