@@ -6,6 +6,7 @@
         
         <li>info film</li>
         <li v-for="(film,index) in filmList" :key="index">
+          <img :src="'https://image.tmdb.org/t/p/w185' + film.poster_path" :alt="'image' + film.title"/>
             {{film.title}} ---
             {{film.original_title}} ---
             <img class="nation" v-if="idFlags.includes(film.original_language)" :src="require('../assets/images/' + film.original_language + '.png')" alt="">
@@ -23,6 +24,7 @@
         
         <li>info Serie Tv</li>
         <li v-for="(serie,index) in tvSerieList" :key="index">
+          <img :src="'https://image.tmdb.org/t/p/w185' + serie.poster_path" :alt="'image' + serie.name"/>
             {{serie.name}} ---
             {{serie.original_name}} ---
             <img class="nation" v-if="idFlags.includes(serie.original_language)" :src="require('../assets/images/' + serie.original_language + '.png')" alt="">
