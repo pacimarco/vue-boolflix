@@ -11,8 +11,11 @@
             {{film.original_title}} ---
             <img class="nation" v-if="idFlags.includes(film.original_language)" :src="require('../assets/images/' + film.original_language + '.png')" alt="">
             <span v-else>{{film.original_language}}</span>
-            {{film.original_language}} ---
-            {{film.vote_average}}
+            
+
+            <div>
+              <i v-for="n in 5" class="fa-star" :class="(n>starVote(film.vote_average))?'fa-regular':'fa-solid'" :key="n"></i>
+            </div>
 
         </li>
                  
@@ -29,8 +32,11 @@
             {{serie.original_name}} ---
             <img class="nation" v-if="idFlags.includes(serie.original_language)" :src="require('../assets/images/' + serie.original_language + '.png')" alt="">
             <span v-else>{{serie.original_language}}</span>
-            {{serie.original_language}} ---
-            {{serie.vote_average}}
+            
+
+            <div>
+              <i v-for="n in 5" class="fa-star" :class="(n>starVote(serie.vote_average))?'fa-regular':'fa-solid'" :key="n"></i>
+            </div>
 
         </li>
                  
@@ -52,6 +58,11 @@ props:{
 data(){
   return{
     idFlags:['en','it']
+  }
+},
+methods:{
+  starVote(defaultVote){
+    return Math.ceil(defaultVote / 2);
   }
 }
 }    
