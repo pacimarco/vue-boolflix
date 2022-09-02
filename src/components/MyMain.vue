@@ -1,14 +1,16 @@
 <template>
   <div>
+    
     <section class="movie">
+      <MyCard v-for="(film,index) in filmList" :key="index" :filmList=Array></MyCard>/>
       <h3>Film</h3>
       <ul>
         
         <li>info film</li>
-        <li v-for="(film,index) in filmList" :key="index">
-          <img :src="'https://image.tmdb.org/t/p/w185' + film.poster_path" :alt="'image' + film.title"/>
-            {{film.title}} ---
-            {{film.original_title}} ---
+        <li >
+          
+             ---
+            
             <img class="nation" v-if="idFlags.includes(film.original_language)" :src="require('../assets/images/' + film.original_language + '.png')" alt="">
             <span v-else>{{film.original_language}}</span>
             
@@ -22,11 +24,12 @@
     </ul>
     </section>
     <section class="series">
+      <MyCard v-for="(serie,index) in tvSerieList" :key="index" :tvSerieList=Array></MyCard>/>
       <h3>Serie Tv</h3>
       <ul>
         
         <li>info Serie Tv</li>
-        <li v-for="(serie,index) in tvSerieList" :key="index">
+        <li >
           <img :src="'https://image.tmdb.org/t/p/w185' + serie.poster_path" :alt="'image' + serie.name"/>
             {{serie.name}} ---
             {{serie.original_name}} ---
@@ -48,23 +51,19 @@
 </template>
 
 <script>
-    
+    import MyCard from '@/components/MyCard.vue';
 export default {
 name:"MyMain",
-props:{
-    filmList:Array,
-    tvSerieList:Array
+components:{
+  MyCard,
 },
+
 data(){
   return{
     idFlags:['en','it']
   }
 },
-methods:{
-  starVote(defaultVote){
-    return Math.ceil(defaultVote / 2);
-  }
-}
+
 }    
 </script>
 

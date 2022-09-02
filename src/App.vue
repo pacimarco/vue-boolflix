@@ -2,6 +2,7 @@
   <div id="app">
     <MyHeader @search="searching"/>
     <MyMain :filmList="filmList" :tvSerieList="tvSerieList"/>
+    
   </div>
 </template>
 
@@ -10,11 +11,13 @@ import MyHeader from './components/MyHeader.vue';
 import MyMain from './components/MyMain.vue';
 import axios from 'axios';
 
+
 export default {
   name: 'App',
   components: {
     MyHeader,
-    MyMain
+    MyMain,
+    
   },
   data(){
     return{
