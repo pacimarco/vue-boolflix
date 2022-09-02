@@ -11,12 +11,12 @@
           
              ---
             
-            <img class="nation" v-if="idFlags.includes(film.original_language)" :src="require('../assets/images/' + film.original_language + '.png')" alt="">
-            <span v-else>{{film.original_language}}</span>
+            
+            
             
 
             <div>
-              <i v-for="n in 5" class="fa-star" :class="(n>starVote(film.vote_average))?'fa-regular':'fa-solid'" :key="n"></i>
+              
             </div>
 
         </li>
@@ -31,8 +31,7 @@
         <li>info Serie Tv</li>
         <li >
           <img :src="'https://image.tmdb.org/t/p/w185' + serie.poster_path" :alt="'image' + serie.name"/>
-            {{serie.name}} ---
-            {{serie.original_name}} ---
+            
             <img class="nation" v-if="idFlags.includes(serie.original_language)" :src="require('../assets/images/' + serie.original_language + '.png')" alt="">
             <span v-else>{{serie.original_language}}</span>
             
